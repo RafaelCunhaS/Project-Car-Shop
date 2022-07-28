@@ -35,7 +35,7 @@ Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta 
   </summary><br>
   
   - Este projeto é individual;
-  - São `X` dias de projeto;
+  - São `2` dias de projeto;
   - Data de entrega para avaliação final do projeto: `08/08/2022 14:00`.
 
 </details>
@@ -49,7 +49,7 @@ Ao iniciar este projeto, você concorda com as diretrizes do Código de Conduta 
 
   1. Clone o repositório
 
-  - Use o comando: `git clone https://github.com/tryber/sd-017-project-car-shop.git`.
+  - Use o comando: `git clone git@github.com:tryber/sd-017-project-car-shop.git`.
   - Entre na pasta do repositório que você acabou de clonar:
     - `cd sd-017-project-car-shop`
 
