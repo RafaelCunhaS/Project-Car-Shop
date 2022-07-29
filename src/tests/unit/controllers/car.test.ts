@@ -1,4 +1,4 @@
-import { expect, assert } from 'chai';
+import { expect } from 'chai';
 import * as sinon from 'sinon';
 import { Request, Response } from 'express';
 import { carMock, carMockWithId } from '../../mocks/carMock';
