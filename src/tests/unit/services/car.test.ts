@@ -79,7 +79,15 @@ describe('car Service', () => {
 			expect(carCreated).to.be.deep.equal(carMockWithId);
 		});
 
-		it('Failure', async () => {
+		it('Zod error', async () => {
+			try {
+				await carService.update(carMockWithId._id, {} as any);
+			} catch (error) {
+				expect(error).to.be.instanceOf(ZodError);
+			}
+		});
+
+		it('Not found failure', async () => {
 			try {
 				await carService.update(carMockWithId._id, carMock);
 			} catch (error:any) {

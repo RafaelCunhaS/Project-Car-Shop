@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+import { expect, assert } from 'chai';
 import * as sinon from 'sinon';
 import { Request, Response } from 'express';
 import { carMock, carMockWithId } from '../../mocks/carMock';
@@ -23,6 +23,7 @@ describe('car Controller', () => {
 
     res.status = sinon.stub().returns(res);
     res.json = sinon.stub().returns(res);
+    res.end = sinon.stub().returns(res);
   });
 
   after(() => {
@@ -74,8 +75,8 @@ describe('car Controller', () => {
       req.params = { id: carMockWithId._id };
       await carController.delete(req, res);
 
-      expect((res.status as sinon.SinonStub).calledWith(200)).to.be.true;
-      expect((res.json as sinon.SinonStub).calledWith(carMockWithId)).to.be.true;
+      expect((res.status as sinon.SinonStub).calledWith(204)).to.be.true;
+      expect((res.end as sinon.SinonStub).calledWith()).to.be.true;
     });
   });
 });
