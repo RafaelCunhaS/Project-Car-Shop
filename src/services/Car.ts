@@ -28,6 +28,10 @@ class CarService implements IService<ICar> {
   }
 
   public async update(_id: string, obj: ICar): Promise<ICar> {
+    const parsed = CarZodSchema.safeParse(obj);
+
+    if (!parsed.success) throw parsed.error;
+
     const carUpdated = await this._model.update(_id, obj);
 
     if (!carUpdated) throw Error(ErrorTypes.EntityNotFound);
